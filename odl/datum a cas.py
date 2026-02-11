@@ -1,7 +1,8 @@
 import calendar
-from datetime import datetime, timedelta, timezone, date
+from datetime import datetime, timedelta, timezone, date, time
 from zoneinfo import ZoneInfo
 import pandas as pd
+from dateutil.relativedelta import relativedelta
 
 print(calendar.month(2026, 3))
 print(calendar.weekday(2026, 2, 4))
@@ -44,3 +45,22 @@ tz = ZoneInfo("Europe/Prague")
 start = start_utc.astimezone(tz).strftime("%d.%m.%Y %H:%M")
 end = end_utc.astimezone(tz).strftime("%H:%M")
 print(f"Schůzka s Frantou Novákem: {start}-{end}")
+
+
+print(datetime.now())
+
+birth = date(2008, 8, 25)
+today = date.today()
+
+diff = relativedelta(today, birth)
+
+print(f"{diff.years} let, {diff.months} měsíců, {diff.days} dní")
+
+
+from datetime import datetime, timezone
+from zoneinfo import ZoneInfo
+
+dt = datetime(2026, 2, 4, 13, 20, tzinfo=ZoneInfo("Europe/Prague"))
+seconds_since_epoch = int(dt.astimezone(timezone.utc).timestamp())
+
+print(f"Od 1.1.1970 00:00 UTC uplynulo {seconds_since_epoch} sekund.")
