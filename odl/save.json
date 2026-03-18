@@ -1,0 +1,24 @@
+{
+    "player_x": 10,
+    "player_y": 4,
+    "player_gender": "male",
+    "enemies": [],
+    "settings": {
+        "resolution": "HD",
+        "volume": 0.5,
+        "world_level": 1,
+        "xp": 0,
+        "next_lvl_xp": 100,
+        "player_max_hp": 100,
+        "player_lvl": 1,
+        "enemies_killed": 0,
+        "quest_count": 0,
+        "player_current_hp": 100
+    },
+    "inventory": {
+        "gold": 100,
+        "attack": 20,
+        "potions": 1
+    },
+    "current_map": "main"
+}
